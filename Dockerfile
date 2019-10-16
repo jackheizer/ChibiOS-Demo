@@ -7,7 +7,7 @@ RUN apk --update --no-cache add --virtual build-dependencies \
     ca-certificates \
     openssl \
     tar \
-    w3m
+    w3m \
     && wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2 \
     && tar xvf gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2 \
     && rm gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2 \
