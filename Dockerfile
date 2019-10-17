@@ -8,4 +8,4 @@ RUN apt-get update && \
 
 WORKDIR /usr/project
 
-CMD ["gcc-arm-none-eabi --version"]
+CMD ["arm-none-eabi-gcc --version"]
