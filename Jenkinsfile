@@ -4,6 +4,7 @@ pipeline {
         stage('HW') {
             steps {
                 sh 'gcc-arm-none-eabi --version'
+                sh 'make'
             }
         }
     }
