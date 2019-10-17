@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('HW') {
             steps {
-                echo 'Hello world!'
+                sh 'gcc-arm-none-eabi --version'
             }
         }
     }
