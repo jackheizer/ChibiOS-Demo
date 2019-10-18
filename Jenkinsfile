@@ -1,14 +1,18 @@
 pipeline {
     agent {
         dockerfile {
-            args '-v $HOME/.m2:/root/.m2'
+            args '--privileged -v /dev/bus/usb:/dev/bus/usb'
         }
     }
     stages {
-        stage('HW') {
+        stage('build') {
             steps {
-                sh 'arm-none-eabi-gcc --version'
                 sh 'make'
+            }
+        }
+        stage('flash') {
+            steps {
+                sh 'openocd -f /usr/share/openocd/scripts/interface/stlink-v2-1.cfg -f /usr/share/openocd/scripts/target/stm32l0.cfg -c "program build/ChibiOS-Demo.elf verify reset exit"'
             }
         }
     }
