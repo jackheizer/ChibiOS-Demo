@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian:stretch
 
 WORKDIR /home/dev
 
