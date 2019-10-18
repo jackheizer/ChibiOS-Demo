@@ -8,6 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'make'
+                sh 'whoami'
             }
         }
         stage('flash') {
