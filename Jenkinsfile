@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            args '--privileged -v /dev/bus/usb:/dev/bus/usb -v /dev/tty:/dev/tty'
+            args '--group-add plugdev --device=/dev/bus -v /dev/serial:/dev/serial --device=/dev/tty'
         }
     }
     stages {
